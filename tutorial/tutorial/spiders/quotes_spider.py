@@ -2,7 +2,7 @@
 import scrapy
 
 class QuotesSpider(scrapy.Spider):
-    name = "quote"
+    name = "quotes"
 
     def start_requests(self):
         urls = [
@@ -14,7 +14,7 @@ class QuotesSpider(scrapy.Spider):
    
     def parse(self, response):
         page = response.url.split("/")[-2]
-        filename = 'quotes-$s.html' % page
+        filename = 'quotes-%s.html' % page
         with open(filename, 'wb') as f:
             f.write(response.body)
-        self.log("Save file %s' % filename)
+        self.log("Save file %s" % filename)
