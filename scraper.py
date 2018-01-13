@@ -9,7 +9,7 @@ from datetime import datetime
 # get url
 getpage = "http://www.bloomberg.com/quote/SPX:IND"
 
-# get HTML of getpage url
+# get HTML of variable getpage/url
 page = urllib2.urlopen(getpage)
 
 # parse html w/bs and store in var
